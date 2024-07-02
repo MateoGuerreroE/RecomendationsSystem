@@ -1,4 +1,6 @@
-package Step3;
+package Step3.Filters;
+
+import Step3.Filter;
 
 import java.util.ArrayList;
 
@@ -16,7 +18,7 @@ public class AllFilters implements Filter {
     @Override
     public boolean satisfies(String id) {
         for(Filter f : filters) {
-            if (! f.satisfies(id)) {
+            if (!f.satisfies(id)) {
                 return false;
             }
         }

@@ -4,6 +4,7 @@ import java.util.*;
 
 import Step1.FirstRatings;
 import Step1.Movie;
+import Step4.RaterDatabase;
 
 public class MovieDatabase {
     private static HashMap<String, Movie> ourMovies;
@@ -22,14 +23,30 @@ public class MovieDatabase {
         }
     }	
 
-	
     private static void loadMovies() {
-        FirstRatings fr = new FirstRatings("ratedmovies_short.csv", "ratings_short.csv");
+        FirstRatings fr = new FirstRatings("ratedmoviesfull.csv", "ratings.csv");
         List<Movie> list = fr.loadMovies();
         for (Movie m : list) {
             ourMovies.put(m.getID(), m);
         }
     }
+
+    public static int getRatingCount(List<Rater> raterList, String movieId) {
+        int counter = 0;
+        for (Rater rater : raterList) {
+            if (rater.hasRating(movieId)) counter++;
+        }
+        return counter;
+    }
+
+    public static int getRatingCountByID(List<String> raterIds, String movieId) {
+        int counter = 0;
+        for (String raterId : raterIds) {
+            if (RaterDatabase.getRater(raterId).hasRating(movieId)) counter++;
+        }
+        return counter;
+    }
+
 
     public static boolean containsID(String id) {
         initialize();

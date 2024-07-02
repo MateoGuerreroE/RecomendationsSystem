@@ -1,4 +1,7 @@
-package Step3;
+package Step3.Filters;
+
+import Step3.Filter;
+import Step3.MovieDatabase;
 
 public class YearAfterFilter implements Filter {
 	private int myYear;

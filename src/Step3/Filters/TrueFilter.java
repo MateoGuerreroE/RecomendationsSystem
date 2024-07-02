@@ -1,4 +1,6 @@
-package Step3;
+package Step3.Filters;
+
+import Step3.Filter;
 
 public class TrueFilter implements Filter {
 	@Override

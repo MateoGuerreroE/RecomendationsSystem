@@ -14,7 +14,7 @@ public class CSVReader<T, U> {
     private Class<T> type;
 
     public CSVReader(String fileName, Class<T> type) {
-        this.filePath = "E:\\Programming\\JAVA\\PersonalTesting\\src\\Step1\\data\\" + fileName;
+        this.filePath = "E:\\Programming\\JAVA\\RecomendationsSystem\\src\\Step1\\data\\" + fileName;
         this.type = type;
     }
 
